@@ -1,13 +1,18 @@
-"""Format files according to QMK's style.
+"""Point people to the new command name.
 """
+import os
+import sys
+
 from milc import cli
 
-import subprocess
 
-
-@cli.subcommand("Format files according to QMK's style.", hidden=True)
+@cli.subcommand('Pointer to the new command name: qmk format-text.', hidden=False if cli.config.user.developer else True)
 def fileformat(cli):
-    """Run several general formatting commands.
+    """Pointer to the new command name: qmk format-text.
     """
-    dos2unix = subprocess.run(['bash', '-c', 'git ls-files -z | xargs -0 dos2unix'], stdout=subprocess.DEVNULL)
-    return dos2unix.returncode
+    cli.log.warning('"qmk fileformat" has been renamed to "qmk format-text". Please change to the new command.')
+    argv = [sys.executable, *sys.argv]
+    argv[argv.index('fileformat')] = 'format-text'
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os.execv(sys.executable, argv)
