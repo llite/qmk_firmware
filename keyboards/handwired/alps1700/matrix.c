@@ -68,10 +68,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     extern const matrix_row_t matrix_mask[];
 #endif
 
-#if (DIODE_DIRECTION == COL2ROW) || (DIODE_DIRECTION == ROW2COL)
+#if (DIODE_DIRECTION == ROW2COL) || (DIODE_DIRECTION == COL2ROW)
 static const uint8_t row_pins[MATRIX_ROWS] = NEK_MATRIX_ROW_PINS;
 static const uint8_t col_pins[MATRIX_COLS] = NEK_MATRIX_COL_PINS;
-/*static const bool col_expanded[MATRIX_COLS] = COL_EXPANDED; */
+static const bool col_expanded[MATRIX_COLS] = COL_EXPANDED; 
 #endif
 
 /* matrix state(1:on, 0:off) */

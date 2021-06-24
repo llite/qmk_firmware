@@ -16,7 +16,7 @@
 #ifndef MAP23017_H
 #define MAP23017_H
 
-#define EXPANDER_ADDR 0x20
+#define EXPANDER_ADDR 0x27
 #define I2C_TIMEOUT 200 // milliseconds
 #define EXPANDER_PAUSE 0 // microseconds
 
