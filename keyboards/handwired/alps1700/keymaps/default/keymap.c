@@ -1,5 +1,3 @@
-/* #include "alps1700.h" */
-
 #include QMK_KEYBOARD_H
 
 
